@@ -5,7 +5,7 @@ var bodyParser = require('body-parser'),
 
 var indexRoutes = require('./routes/index');
 
-mongoose.connect('mongodb://localhost/nightlife');
+//mongoose.connect('mongodb://localhost/nightlife');
 
 app.use(bodyParser.urlencoded({extended: true}));
 app.use(express.static(__dirname + '/public'));
