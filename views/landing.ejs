@@ -9,17 +9,17 @@
             <li>
                 <p class="wow fadeInDown">Bringing the <em><strong>bar</strong>*</em>  into your pocket</p>
             </li>
-            <form class="form-inline wow fadeInLeft">
+            <form class="form-inline wow fadeInLeft" action="/bars" method="GET">
                 <div class="row">
                     <div class="col-sm-6">
                         <div class="md-form form-group">
-                            <input type="password" id="form92" class="ml-3 form-control validate">
-                            <label class="ml-3" for="form92" data-error="wrong" data-success="right">Where are you at?</label>
+                            <input type="text" id="loctn" name="loctn" class="ml-3 form-control" autocomplete="off">
+                            <label class="ml-3" for="loctn" data-error="wrong" data-success="right">Where are you at?</label>
                         </div>
                     </div>
                     <div class="col-sm-6">
                         <div class="md-form form-group">
-                        <a href="" class="btn btn-primary btn-sm">Search...</a>
+                        <button type="submit" class="btn btn-primary btn-sm">Search...</button>
                         </div>
                     </div>
                 </div>
@@ -27,6 +27,6 @@
         </ul>
     </div>
 </div>
-<!--/.Mask-->
+<!--/Mask-->
 
 <% include ./partials/landingFooter %>

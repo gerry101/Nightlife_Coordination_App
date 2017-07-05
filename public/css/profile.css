@@ -1,0 +1,24 @@
+#form-inline {
+    display: inline;
+}
+
+#form-pd {
+    padding-top: 15vh;
+}
+
+.avatar {
+    height: 70px;
+    width:  70px;
+}
+
+.error-text {
+    margin-left: 45px;
+}
+
+.error {
+    color: #D50000;
+}
+
+.fa-home:hover {
+    color: #3F51B5;
+}

@@ -1,0 +1,71 @@
+<% include ./partials/header %>
+
+<div class="container-fluid">
+    <div class="jumbotron">
+        <div class="text-center">
+            <h3 class="display-4">Bar<em>Ea</em></h3>
+            <p class="lead my-2">Check out <em>bars<strong>*</strong> in <%=location%></em></p>
+            <div class="row">
+                <div class="col-md-4"></div>
+                <div class="col-md-6">
+                    <form class="form-inline wow fadeInLeft mt-3" action="/bars" method="GET">
+                        <div class="row">
+                            <div class="col-sm-6">
+                                <div class="md-form form-group">
+                                    <input type="text" id="loctn" name="loctn" class="ml-3 form-control">
+                                    <label class="ml-3" for="loctn" data-error="wrong" data-success="right">Where are you at?</label>
+                                </div>
+                            </div>
+                            <div class="col-sm-6">
+                                <div class="md-form form-group">
+                                <button type="submit" class="btn btn-primary btn-sm">Search...</button>
+                                </div>
+                            </div>
+                        </div>
+                </form>
+                </div>
+                <div class="col-md-2"></div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="container">
+    <div class="row">
+        <%businessData.forEach(function(business){%>
+        <div class="col-md-6">
+            <div class="row">
+                <div class="col-12 col-sm-2">
+                    <img src="<%=business.image%>" class="img-fluid rounded-circle z-depth-2 avatar" alt="business image">
+                </div>
+                <div class=" col-12 col-sm-10">
+                    <p><strong><%=business.name%></strong></p>
+                    <div class="personal-sm">
+                        <a href="<%=business.url%>" target="_blank" class="email-ic"><i class="fa fa-home mr-1"> </i></a>
+                        <%if(business.isClosed === false) {%>
+                            <span class="badge blue">open</span>
+                            <%if(business.isGoingBool === false) {%>
+                                <form id="form-inline" action="/bar/<%=business.name%>/add" method="GET">
+                                    <button type="submit" class="btn btn-outline-info waves-effect btn-sm hoverable" data-toggle="tooltip" data-placement="right" title="<%=business.isGoing%> going">
+                                        I'm going
+                                    </button>
+                                </form>
+                            <%} else {%>
+                                <form id="form-inline" action="/bar/<%=business.name%>/remove" method="GET">
+                                    <button type="submit" class="btn btn-outline-warning waves-effect btn-sm hoverable" data-toggle="tooltip" data-placement="right" title="<%=business.isGoing%> going">
+                                        Forget It
+                                    </button>
+                                </form> 
+                            <%}%>
+                        <%} else {%>
+                            <span class="badge blue">closed</span>
+                        <%}%>
+                    </div>
+                    <p><%=business.displayAddress%></p>
+                </div>
+            </div>
+        </div>
+        <%})%>
+    </div>
+</div>
+
+<% include ./partials/footer %>
