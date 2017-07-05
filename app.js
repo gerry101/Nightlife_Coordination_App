@@ -12,7 +12,8 @@ var session       = require('express-session'),
 var indexRoutes = require('./routes/index'),
     authRoutes  = require('./routes/auth');
 
-mongoose.connect('mongodb://localhost/nightlife');
+//nightlife
+mongoose.connect(process.env.DATABASE_URL);
 
 app.use(session({
     secret: 'Nightlife coordinate night life',

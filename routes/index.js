@@ -14,7 +14,7 @@ router.get('/bars', middleware.isLoggedIn, function(req, res) {
     if (req.query.loctn) {
         var barNames = [];
         var businessData = [];
-        const client = yelp.client('3d-GWi_WAChIDwG5J5ezc8GIs1tuesxOlgq-Odq069VAh55d2M9HAgI02bBQRGpWzdzjgmidXUhu8wAOhM7wlADhsgQRrxnsPcE1q9xNXNRFEq-SqoPe5Yq78JtaWXYx');
+        const client = yelp.client(process.env.CLIENT);
  
         client.search({
           term:'Bar',
