@@ -35,10 +35,14 @@
         <div class="col-md-6">
             <div class="row">
                 <div class="col-12 col-sm-2">
-                    <img src="<%=business.image%>" class="img-fluid rounded-circle z-depth-2 avatar" alt="business image">
+                    <a href="<%=business.url%>" target="_blank">
+                       <img src="<%=business.image%>" class="img-fluid rounded-circle z-depth-2 avatar" alt="business image"> 
+                    </a>
                 </div>
                 <div class=" col-12 col-sm-10">
-                    <p><strong><%=business.name%></strong></p>
+                    <a href="<%=business.url%>" target="_blank">
+                        <p><strong><%=business.name%></strong></p>
+                    </a>
                     <div class="personal-sm">
                         <a href="<%=business.url%>" target="_blank" class="email-ic"><i class="fa fa-home mr-1"> </i></a>
                         <%if(business.isClosed === false) {%>
